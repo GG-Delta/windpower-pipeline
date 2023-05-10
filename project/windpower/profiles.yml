@@ -1,0 +1,13 @@
+windpower:
+  outputs:
+    prod:
+      type: snowflake
+      threads: 1
+      account: "{{ env_var('DBT_ENV_SECRET_ACCOUNT') }}"
+      user: dbt
+      password: "{{ env_var('DBT_ENV_SECRET_PASSWORD') }}"
+      role: DBT_RW
+      warehouse: CONF_WAREHOUSE
+      database: CONF_DATABASE
+      schema: BASIC
+  target: prod

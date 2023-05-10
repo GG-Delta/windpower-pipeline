@@ -1,0 +1,20 @@
+version: 2
+sources:
+  - name: conf_schema
+    database: conf_database  
+    tables:
+
+      - name: PKSQLC_Q71PMALL_STREAM_1787699529
+        description: 'This is the original input from the All-Stream Kafka topic'
+        columns:
+          - name: record_metadata
+            description: 'Containing the metadata produced by Confluent'
+            tests:
+              - not_null
+
+          - name: record_content
+            description: 'Containing all data gathered from the API request'
+            tests:
+              - not_null
+
+        
